@@ -14,8 +14,6 @@ public class invConnect {
 
     /**
      * Get a connection to database
-     *
-     * @return Connection object
      */
     public static Connection getConnection() {
         try {

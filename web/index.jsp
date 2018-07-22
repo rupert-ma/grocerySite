@@ -1,8 +1,8 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*" %>
 <%@page import="java.sql.*" %>
 <%@page import="java.io.IOException" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -49,35 +49,40 @@
                         <input type="submit" class="btn-block" name="submit" value="Submit"/>
 
 
-                      </div>
-                  </form>
-                  <hr>
-                  <form action="invServlet" method="post">
-                      <div class="form-group">
+                    </div>
+                </form>
+                <hr>
+                <form action="invServlet" method="post">
+                    <div class="form-group">
 
-                          <label>Enter below to Remove Items from the Grocery List</label>
-                          <input type="text" class="form-control" placeholder="Enter Item to Remove" name="DelItem">
-                          <input type="submit" class="btn-block" name="submit" value="Submit"/>
+                        <label>Enter below to Remove Items from the Grocery List</label>
+                        <input type="text" class="form-control" placeholder="Enter Item to Remove" name="DelItem">
+                        <input type="submit" class="btn-block" name="submit" value="Submit"/>
 
 
-                            <hr>
-                        </div>
-                    </form>
+                        <hr>
+                    </div>
+                </form>
 
-                    <input type="reset" class="btn-block" name="submit" value="Reset"/>
-                </div>
+                <input type="reset" class="btn-block" name="submit" value="Reset"/>
             </div>
+        </div>
 
-            <div class="col-sm">
-                <!-- Grocery List Section -->
+        <div class="col-sm">
+            <!------- Grocery List Section -------->
+            <form action="invServlet" method="post">
+
                 <div class="col-sm">
                     <h3 style="border-bottom: black">Grocery List</h3>
                     <ul class="list-group">
-                        <jsp:include page="getInv.jsp" flush="true"/>
+                        <c:forEach var="list" items="${showInv}">
+                            <li class="list-group"><c:out value="${list}"/></li>
+                        </c:forEach>
+                    </ul>
+                    <input type="submit" class="btn-block" name="showInv" value="Refresh Grocery List"/>
 
-
-
-            </div>
+                </div>
+            </form>
         </div>
         <div class="col-sm"></div>
     </div>
@@ -85,10 +90,11 @@
 
 
 <!-- Footer -->
-<div class="jumbotron " style="background-color: midnightblue; color: #cccccc; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;">
+<div class="jumbotron "
+     style="background-color: midnightblue; color: #cccccc; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;">
     <div class="row">
         <div class="col-sm text-center">
-            <p>Coded by <a href="#" target="_blank">Michael Rupert</a>.</p>
+            <p>Coded by <a href="main.html">Michael Rupert</a>.</p>
         </div>
     </div>
 </div>

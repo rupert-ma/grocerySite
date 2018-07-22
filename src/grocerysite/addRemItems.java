@@ -19,6 +19,7 @@ public class addRemItems {
             exc.printStackTrace();
         }
     }
+
     public static void delFromDb(String delItem) {
         try {
 // Get Connection
