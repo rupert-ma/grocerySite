@@ -44,10 +44,9 @@
                 <form action="invServlet" method="post">
                     <div class="form-group">
                         <label>Enter below to Add Items to the Grocery List</label>
-                        <input type="text" class="form-control" placeholder="Enter Item to Add" name="NewItem">
-                        <input type="text" class="form-control" placeholder="How Many Do We Need?" name="NewQty">
-                        <input type="submit" class="btn-block" name="submit" value="Submit"/>
-
+                        <input type="text" class="form-control" placeholder="Enter Item to Add" name="NewItem" style="margin: 10px">
+                        <input type="text" class="form-control" placeholder="How Many Do We Need?" name="NewQty" style="margin: 10px">
+                        <input type="submit" class="btn btn-block btn-primary" name="submit" value="Submit" style="margin: 10px"/>
 
 
                     </div>
@@ -57,15 +56,14 @@
                     <div class="form-group">
 
                         <label>Enter below to Remove Items from the Grocery List</label>
-                        <input type="text" class="form-control" placeholder="Enter Item to Remove" name="DelItem">
-                        <input type="submit" class="btn-block" name="submit" value="Submit"/>
+                        <input type="text" class="form-control" placeholder="Enter Item to Remove" name="DelItem" style="margin: 10px">
+                        <input type="submit" class="btn btn-block btn-primary" name="submit" value="Submit" style="margin: 10px"/>
 
 
                         <hr>
                     </div>
                 </form>
 
-                <input type="reset" class="btn-block" name="submit" value="Reset"/>
             </div>
         </div>
 
@@ -77,10 +75,12 @@
                     <h3 style="border-bottom: black">Grocery List</h3>
                     <ul class="list-group">
                         <c:forEach var="list" items="${showInv}">
-                            <li class="list-group"><c:out value="${list}"/></li>
+                            <li class="list-group"><input type="submit" name="DelItem" class="btn btn-outline-primary" style="margin-bottom: 10px" value="<c:out value="${list}"/>"/></li>
                         </c:forEach>
                     </ul>
-                    <input type="submit" class="btn-block" name="showInv" value="Refresh Grocery List"/>
+                    <hr>
+                    <input type="submit" class="btn btn-block btn-primary" name="showInv" value="Refresh Grocery List"/>
+                    <input type="submit" name="delAll" class="btn btn-block btn-danger" value="Delete All"/>
 
                 </div>
             </form>
@@ -95,7 +95,7 @@
      style="background-color: midnightblue; color: #cccccc; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;">
     <div class="row">
         <div class="col-sm text-center">
-            <p>Coded by <a href="main.html">Michael Rupert</a>.</p>
+            <p>Coded by <a href="">Michael Rupert</a>.</p>
         </div>
     </div>
 </div>
