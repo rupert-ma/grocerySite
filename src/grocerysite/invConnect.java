@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 public class invConnect {
 
-    public static final String URL = "jdbc:mysql://localhost:3306/inventory?useSSL=false";
-    public static final String USER = "test";
-    public static final String PASS = "tests";
+    public static final String URL = "";
+    public static final String USER = "";
+    public static final String PASS = "";
 
     /**
      * Get a connection to database
